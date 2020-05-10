@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 
 const  getWindowWidth = () => window?.innerWidth || 0;
 
-const Comics = () => {
+const Comics = ({location}) => {
 
     const images = useStaticQuery(graphql`
         query {
@@ -76,7 +76,7 @@ const Comics = () => {
     const isMobile = windowWidth > 768;
 
     return (
-        <Layout>
+        <Layout location={location}>
             <SEO title="Comics" />
             <div className="comics">
                 <CarouselProvider

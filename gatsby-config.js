@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Labstruggles`,
+    description: `LabStruggles is an initiative aiming to better connect academic researchers with the general public, with the industry, and with each other. By highlighting the comical situations and misadventures faced by the average researcher, we hope make science a little less intimidating and a little more inviting to all.`,
+    author: `@jayl214`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

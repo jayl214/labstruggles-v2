@@ -132,7 +132,7 @@ const FOSTER_POSTS = [
 
 
 
-const Foster = () => {
+const Foster = ({location}) => {
 
     const images = useStaticQuery(graphql`
         query {
@@ -248,7 +248,7 @@ const Foster = () => {
     };
 
     return (
-        <Layout>
+        <Layout location={location}>
             <SEO title="Foster" />
             <div className="foster">
                 <div className="foster__list">
