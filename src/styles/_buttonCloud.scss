@@ -1,0 +1,16 @@
+.button--cloud{
+    height: 8rem;
+    width: 16rem;
+    .button--cloud__content{
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}

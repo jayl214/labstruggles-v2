@@ -1,0 +1,41 @@
+.comics{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    .comics__carousel{
+        width: 100%;
+        max-width: 70rem;
+        margin-bottom: 1rem;
+        .comics__carousel__buttonGroup{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            .comics__carousel__buttonGroup__button{
+                border: none;
+                outline: none;
+                background-color: transparent;
+                transform: scale(1);
+                transition: transform .15s ease-in-out;
+                -moz-transition: transform .15s ease-in-out;
+                -webkit-transition: transform .15s ease-in-out;
+                &.comics__carousel__buttonGroup__button--pulse{
+                    transform: scale(1.2);
+                }
+                &:first-of-type{
+                    margin-right: 5rem;
+                    &.comics__carousel__buttonGroup__button--animate{
+                        transform: scale(1.2);
+                        animation: twitchLeft .2s ease-in-out;
+                    }
+                }
+                &:last-of-type{
+                    &.comics__carousel__buttonGroup__button--animate{
+                        transform: scale(1.2);
+                        animation: twitchRight .2s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,44 +1,40 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Footer from "./footer.js"
 
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+
+  const CURRENT_PATH = window.location.pathname
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header currentPath={CURRENT_PATH} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          // padding: `6.45rem 1.0875rem 1.45rem`,
+          // padding: `5rem 1.0875rem 1.45rem`,
+          padding: `5rem 0 1.45rem`,
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
+        {/* <div className={`header__menu__dropdown header__menu__dropdown--active`}>
+          <ul>
+              <li>
+                  Comics
+              </li>
+              <li>
+                  Foster
+              </li>
+              <li>
+                  About
+              </li>
+          </ul>
+      </div> */}
       </div>
     </>
   )

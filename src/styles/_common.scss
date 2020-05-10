@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha'), 
+	url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+$font-sans-serif: 'Didact Gothic', sans-serif;
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+html {
+    font-family: 'Neucha', cursive;
+    font-weight: lighter;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+$animate-shake: shake .5s cubic-bezier(.36,.07,.19,.97) both;
+
+@keyframes float1 {
+	0% {
+		transform: translatey(0px);
+    }
+	50% {
+		transform: translatey(5px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes float2 {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes shake {
+	10%, 90% {
+	  transform: translate3d(-.25px, 0, 0);
+	}
+	
+	20%, 80% {
+	  transform: translate3d(.5px, 0, 0);
+	}
+  
+	30%, 50%, 70% {
+	  transform: translate3d(-1px, 0, 0);
+	}
+  
+	40%, 60% {
+	  transform: translate3d(1px, 0, 0);
+	}
+}
+
+@keyframes twitchRight {
+	20%{
+		transform: translate3d(-2x, 0, 0) scale(1.2);
+	}
+	50% {
+		transform: translate3d(5px, 0, 0) scale(1.1);
+	}
+	90%{
+		transform: translate3d(-.5px, 0, 0) scale(1.2);
+	}	
+}
+
+@keyframes twitchLeft {
+	20%{
+		transform: translate3d(2x, 0, 0) scale(1.2);
+	}
+	50% {
+		transform: translate3d(-5px, 0, 0) scale(1.1);
+	}
+	90%{
+		transform: translate3d(.5px, 0, 0) scale(1.2);
+	}	
+}
