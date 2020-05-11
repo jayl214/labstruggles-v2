@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const  getWindowWidth = () => window?.innerWidth || 0;
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
+const  getWindowWidth = () => {
+    if (typeof window !== 'undefined') {
+        return window.innerWidth || 0;
+    }
+}
 
 const Comics = ({location}) => {
 
@@ -69,8 +72,10 @@ const Comics = ({location}) => {
         const handleResize = () => {
             setWindowWidth(getWindowWidth());
         }
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
     }, []);
 
     const isMobile = windowWidth > 768;
@@ -79,6 +84,7 @@ const Comics = ({location}) => {
         <Layout location={location}>
             <SEO title="Comics" />
             <div className="comics">
+
                 <CarouselProvider
                     className="comics__carousel"
                     infinite
