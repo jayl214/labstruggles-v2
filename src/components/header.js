@@ -2,7 +2,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-import ButtonCloud from "../components/buttonCloud"
 
 const Header = ({
     currentPath= ''
@@ -109,26 +108,21 @@ const Header = ({
                         Foster
                     </div>
                 </Link>
-                {/* <Link to="/about/">
-                    <div className={`header__nav__button ${currentPath.includes('about') ? 'header__nav__button--active' : ''}`}>
-                        About
-                    </div>
-                </Link> */}
             </div>
             
             <div className="header__social">
                 <div className="header__social__icon">
-                    <a href="">
+                    <a target="_blank" href="https://www.instagram.com/labstruggles/">
                         <Img fixed={images.iconInstagram.childImageSharp.fixed}/>
                     </a>
                 </div>
                 <div className="header__social__icon">
-                    <a href="">
+                    <a target="_blank" href="https://www.facebook.com/labstruggles/">
                         <Img fixed={images.iconFacebook.childImageSharp.fixed}/>
                     </a>
                 </div>
                 <div className="header__social__icon">
-                    <a href="">
+                    <a target="_blank" href="https://twitter.com/LabStruggles">
                         <Img fixed={images.iconTwitter.childImageSharp.fixed}/>
                     </a>
                 </div>
@@ -151,23 +145,17 @@ const Header = ({
                         </Link>
                         <Link to="/foster/" className="header__menu__dropdown__body__link"> 
                             <div className="header__menu__dropdown__body__link__content" style={{backgroundImage: `url(${images.blobCyan.childImageSharp.fluid.src})`}}>
-                                Exchange
+                                Foster
                             </div>
                         </Link>
-                        {/* <Link to="/about/" className="header__menu__dropdown__body__link">
-                            <div className="header__menu__dropdown__body__link__content" style={{backgroundImage: `url(${images.blobGreen.childImageSharp.fluid.src})`}}>
-                                About
-                            </div>
-                        </Link> */}
-
                         <div className="header__menu__dropdown__body__social">
-                            <a target="_blank" href="">
+                            <a target="_blank" href="https://www.instagram.com/labstruggles/">
                                 <Img fixed={images.iconInstagramLarge.childImageSharp.fixed}/>
                             </a>
-                            <a target="_blank" href="">
+                            <a target="_blank" href="https://www.facebook.com/labstruggles/">
                                 <Img fixed={images.iconFacebookLarge.childImageSharp.fixed}/>
                             </a>
-                            <a target="_blank" href="">
+                            <a target="_blank" href="https://twitter.com/LabStruggles">
                                 <Img fixed={images.iconTwitterLarge.childImageSharp.fixed}/>
                             </a>
                         </div>

@@ -114,7 +114,7 @@ const FOSTER_POSTS = [
         "latitude": 21.552052,
         "longitude": -157.850855,
         "participantName": "Sara Matthews",
-        "participantTitle": "PhD candidate",
+        "participantTitle": "Master of Engineering candidate",
         "participantInsitute": "McGill University, Canada"
     },
     {

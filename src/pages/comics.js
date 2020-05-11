@@ -78,8 +78,6 @@ const Comics = ({location}) => {
         }
     }, []);
 
-    const isMobile = windowWidth > 768;
-
     return (
         <Layout location={location}>
             <SEO title="Comics" />
@@ -88,7 +86,7 @@ const Comics = ({location}) => {
                 <CarouselProvider
                     className="comics__carousel"
                     infinite
-                    visibleSlides={isMobile ?  2 : 1}
+                    visibleSlides={windowWidth < 768 ?  1 : 2}
                     totalSlides={4}
                     naturalSlideWidth={10}
                     naturalSlideHeight={10}
