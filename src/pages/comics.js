@@ -4,6 +4,8 @@ import Img from "gatsby-image"
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ArrowLeft from "../svg/arrowLeft.svg"
+import ArrowRight from "../svg/arrowRight.svg"
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -45,22 +47,53 @@ const Comics = ({location}) => {
                     }
                 }
             },
-            arrowScribbleRight: file(relativePath: { eq: "scribbleArrowRight.jpg" }) {
+
+            comicDisappointed: file(relativePath: { eq: "comics/disappointed.png" }) {
                 childImageSharp {
-                    fixed(height: 65) {
-                        ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             },
-            arrowScribbleLeft: file(relativePath: { eq: "scribbleArrowLeft.jpg" }) {
+
+            comicFactoid: file(relativePath: { eq: "comics/factoid.png" }) {
                 childImageSharp {
-                    fixed(height: 65) {
-                        ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            },
+            comicProfonprofhate: file(relativePath: { eq: "comics/profonprofhate.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            },
+            comicStudentnumber3: file(relativePath: { eq: "comics/studentnumber3.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
         }
     `)
+
+    // arrowScribbleRight: file(relativePath: { eq: "arrowRight.svg" }) {
+    //     childImageSharp {
+    //         fixed(height: 65) {
+    //             ...GatsbyImageSharpFixed
+    //         }
+    //     }
+    // },
+    // arrowScribbleLeft: file(relativePath: { eq: "arrowLeft.svg" }) {
+    //     childImageSharp {
+    //         fixed(height: 65) {
+    //             ...GatsbyImageSharpFixed
+    //         }
+    //     }
+    // }
     const [windowWidth, setWindowWidth] = useState(getWindowWidth());
 
     const [animateLeftArrowTwitch, setAnimateLeftArrowTwitch] = useState(false);
@@ -82,16 +115,16 @@ const Comics = ({location}) => {
         <Layout location={location}>
             <SEO title="Comics" />
             <div className="comics">
-
                 <CarouselProvider
                     className="comics__carousel"
                     infinite
                     visibleSlides={windowWidth < 768 ?  1 : 2}
-                    totalSlides={4}
+                    totalSlides={8}
                     naturalSlideWidth={10}
                     naturalSlideHeight={10}
                 >
                     <div className="comics__carousel__buttonGroup">
+                        
                         <ButtonBack
                             className={`
                                 comics__carousel__buttonGroup__button
@@ -105,7 +138,9 @@ const Comics = ({location}) => {
                                 setAnimateLeftArrowTwitch(false)
                             }}
                         >
-                            <Img fixed={images.arrowScribbleLeft.childImageSharp.fixed}/>
+                            <ArrowLeft
+                                className="comics__carousel__buttonGroup__button__arrow"
+                            />
                         </ButtonBack>
                         <ButtonNext
                             className={`
@@ -120,21 +155,35 @@ const Comics = ({location}) => {
                                 setAnimateRightArrowTwitch(false)
                             }}
                         >
-                            <Img fixed={images.arrowScribbleRight.childImageSharp.fixed}/>
+                            <ArrowRight
+                                className="comics__carousel__buttonGroup__button__arrow"
+                            />
                         </ButtonNext>
                     </div>
                     <Slider>
                         <Slide index={0}>
-                            <Img fluid={images.comicTacticalPipette.childImageSharp.fluid}/>
+                            <Img fluid={images.comicTacticalPipette?.childImageSharp?.fluid}/>
                         </Slide>
                         <Slide index={1}>
-                            <Img fluid={images.comicFullName.childImageSharp.fluid}/>
+                            <Img fluid={images.comicFullName?.childImageSharp?.fluid}/>
                         </Slide>
                         <Slide index={2}>
-                            <Img fluid={images.comicHotChocolate.childImageSharp.fluid}/>
+                            <Img fluid={images.comicHotChocolate?.childImageSharp?.fluid}/>
                         </Slide>
                         <Slide index={3}>
-                            <Img fluid={images.comicElevator.childImageSharp.fluid}/>
+                            <Img fluid={images.comicElevator?.childImageSharp?.fluid}/>
+                        </Slide>
+                        <Slide index={4}>
+                            <Img fluid={images.comicDisappointed?.childImageSharp?.fluid}/>
+                        </Slide>
+                        <Slide index={5}>
+                            <Img fluid={images.comicStudentnumber3?.childImageSharp?.fluid}/>
+                        </Slide>
+                        <Slide index={6}>
+                            <Img fluid={images.comicFactoid?.childImageSharp?.fluid}/>
+                        </Slide>
+                        <Slide index={7}>
+                            <Img fluid={images.comicProfonprofhate?.childImageSharp?.fluid}/>
                         </Slide>
                     </Slider>
                 </CarouselProvider>

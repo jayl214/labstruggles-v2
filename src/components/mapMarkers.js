@@ -1,11 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Marker} from 'react-map-gl';
-
-const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,4.5,2,10c0,2,0.6,3.9,1.6,5.4c0,0.1,0.1,0.2,0.2,0.3
-  c0,0,0.1,0.1,0.1,0.2c0.2,0.3,0.4,0.6,0.7,0.9c2.6,3.1,7.4,7.6,7.4,7.6s4.8-4.5,7.4-7.5c0.2-0.3,0.5-0.6,0.7-0.9
-  C20.1,15.8,20.2,15.8,20.2,15.7z`;
-
-const icon2 = "M1152 640q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm256 0q0 109-33 179l-364 774q-16 33-47.5 52t-67.5 19-67.5-19-46.5-52l-365-774q-33-70-33-179 0-212 150-362t362-150 362 150 150 362z"
 
 const SIZE = 28;
 
@@ -25,11 +19,6 @@ const MapMarkers = ({
                 viewBox={`0 0 ${SIZE} ${SIZE}`}
                 style={{
                     cursor: 'pointer',
-                    // #baffff //blue
-                    // fill: '#ffd2ff', //pink
-                    // fill: '#b4feb5', // green
-                    // fill: index === activeMarkerIndex ? '#ffd2ff' : '#b4feb5',
-                    // fill: index === activeMarkerIndex ? 'cyan' : '#b4feb5',
                     fill: index === activeMarkerIndex ? 'black' : 'white',
                     stroke: 'none',
                     transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
