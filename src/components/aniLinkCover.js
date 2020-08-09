@@ -19,14 +19,6 @@ const AniLinkCover = ({children, to, className}) => {
         >
             {children}
         </AniLink>
-        // <AniLink
-        //     cover
-        //     className={className}
-        //     to={to}
-        //     bg={bgColor}
-        // >
-        //     {children}
-        // </AniLink>
     )
 }
 
