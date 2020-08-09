@@ -1,7 +1,6 @@
 import React from 'react';
 import {Marker} from 'react-map-gl';
 import MapPinIcon from "../svg/mapPinIcon.svg"
-const SIZE = 28;
 
 const MapMarkers = ({
     data = [],

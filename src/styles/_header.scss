@@ -142,6 +142,7 @@
                     flex-flow: column;
                     width: 100%;
                     .header__menu__dropdown__body__link{
+                        z-index: 100;
                         margin-bottom: 7vh;
                         .header__menu__dropdown__body__link__content{
                             background-size: cover;
@@ -152,6 +153,9 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
+                            &:hover{
+                                text-decoration: underline;
+                            }
                         }
                     }
                     .header__menu__dropdown__body__social{
@@ -160,6 +164,11 @@
                         width: 60%;
                         display: flex;
                         justify-content: space-between;
+                        & > a{
+                            &:hover {
+                                animation: $animate-shake;
+                            }
+                        }
                     }
                 }
             }

@@ -86,7 +86,7 @@ const Header = ({
 
     const [isMenuActive, setIsMenuActive] = useState(false);
     const _onToggleMenu = () => setIsMenuActive(!isMenuActive);
-  
+
     return (
         <header
             id="header"
@@ -111,7 +111,6 @@ const Header = ({
                     </div>
                 </AniLinkCover>
             </div>
-            
             <div className="header__social">
                 <div className="header__social__icon">
                     <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/labstruggles/">
@@ -141,12 +140,20 @@ const Header = ({
                 <div className={`header__menu__dropdown ${isMenuActive ? 'header__menu__dropdown--active' : ''}`}>
                     <div className="header__menu__dropdown__body">
                         <AniLinkCover to="/comics/" className="header__menu__dropdown__body__link">
-                            <div className="header__menu__dropdown__body__link__content" style={{backgroundImage: `url(${images.blobPink.childImageSharp.fluid.src})`}}>
+                            <div
+                                className="header__menu__dropdown__body__link__content"
+                                style={{backgroundImage: `url(${images.blobPink.childImageSharp.fluid.src})`}}
+                                onClick={_onToggleMenu}
+                            >
                                 Comics
                             </div>
                         </AniLinkCover>
                         <AniLinkCover to="/foster/" className="header__menu__dropdown__body__link"> 
-                            <div className="header__menu__dropdown__body__link__content" style={{backgroundImage: `url(${images.blobCyan.childImageSharp.fluid.src})`}}>
+                            <div
+                                className="header__menu__dropdown__body__link__content"
+                                style={{backgroundImage: `url(${images.blobCyan.childImageSharp.fluid.src})`}}
+                                onClick={_onToggleMenu}
+                            >
                                 Foster
                             </div>
                         </AniLinkCover>

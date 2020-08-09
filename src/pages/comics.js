@@ -169,8 +169,8 @@ const Comics = ({location}) => {
                         </Parallax>
 
                         <div className="comics__list__column">
-                            {comics.map(comic =>
-                                <div className="comics__list__column__entry">
+                            {comics.map((comic, i) =>
+                                <div key={i} className="comics__list__column__entry">
                                     <Img fluid={comic}/>
                                 </div>
                             )}
