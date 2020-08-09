@@ -1,13 +1,9 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
 import MapGL, {NavigationControl} from 'react-map-gl'
-
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 import MapMarkers from "../components/mapMarkers"
 
 const NAV_STYLE = {
@@ -271,7 +267,9 @@ const Foster = ({location}) => {
                                 onClick={() => _onClickMarker(marker, index)}
                             >
                                 <div className="foster__list__card__image">
-                                    <Img fluid={fosterPostImages[index]}/>
+                                    <a rel="noopener noreferrer" target="_blank" href={marker.link}>
+                                        <Img fluid={fosterPostImages[index]}/>
+                                    </a>
                                 </div>
                                 <div className="foster__list__card__description">
                                     <div>
@@ -279,7 +277,7 @@ const Foster = ({location}) => {
                                             {marker.city}
                                         </div>
                                         <div className="foster__list__card__description__header">
-                                            <a target="_blank" href={marker.link}>{marker.location.toUpperCase()}</a>
+                                            <a rel="noopener noreferrer" target="_blank" href={marker.link}>{marker.location.toUpperCase()}</a>
                                         </div>
                                         <div className="foster__list__card__description__participant">
                                             {participant}
@@ -300,8 +298,6 @@ const Foster = ({location}) => {
                         height="100%"
                         mapboxApiAccessToken={process.env.GATSBY_MAPBOX_API_ACCESS_TOKEN}
                         mapStyle="mapbox://styles/mapbox/streets-v11"
-                        // mapStyle="mapbox://styles/mapbox/dark-v8"
-                        // mapStyle="mapbox://styles/mapbox/light-v8"
                         onViewportChange={_onViewportChange}
                         scrollZoom={false}
                     >

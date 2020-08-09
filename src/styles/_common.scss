@@ -27,7 +27,7 @@ $animate-shake: shake .5s cubic-bezier(.36,.07,.19,.97) both;
 		transform: translatey(0px);
     }
 	50% {
-		transform: translatey(5px);
+		transform: translatey(7.5px);
 	}
 	100% {
 		transform: translatey(0px);
@@ -39,7 +39,7 @@ $animate-shake: shake .5s cubic-bezier(.36,.07,.19,.97) both;
 		transform: translatey(0px);
 	}
 	50% {
-		transform: translatey(10px);
+		transform: translatey(15px);
 	}
 	100% {
 		transform: translatey(0px);

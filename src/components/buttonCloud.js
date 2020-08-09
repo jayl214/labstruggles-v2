@@ -6,25 +6,35 @@ const ButtonCloud = ({
     hoverBackgroundImageUrl,
     label,
     className,
-    linkTo
+    linkTo,
+    isExternal
 }) => {
     const [backgroundImageUrl, setBackgroundImageUrl] = useState(defaultBackgroundImageUrl);
     const CLASS_NAME = `button--cloud ${className}`
 
+    const content =(
+        <div
+            className="button--cloud__content"
+            style={{
+                backgroundImage: `url(${backgroundImageUrl})`
+            }}
+            onMouseEnter={hoverBackgroundImageUrl ? ()=>setBackgroundImageUrl(hoverBackgroundImageUrl) : undefined}
+            onMouseLeave={hoverBackgroundImageUrl ? ()=>setBackgroundImageUrl(defaultBackgroundImageUrl) : undefined}
+        >
+            {label}
+        </div>
+    )
+
     return(
         <div className={CLASS_NAME}>
-            <Link to={linkTo}>
-                <div 
-                    className="button--cloud__content"
-                    style={{
-                        backgroundImage: `url(${backgroundImageUrl})`
-                    }}
-                    onMouseEnter={hoverBackgroundImageUrl ? ()=>setBackgroundImageUrl(hoverBackgroundImageUrl) : undefined}
-                    onMouseLeave={hoverBackgroundImageUrl ? ()=>setBackgroundImageUrl(defaultBackgroundImageUrl) : undefined}
-                >
-                    {label}
-                </div>
-            </Link>
+            {isExternal ?
+                <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/labstruggles/">
+                    {content}
+                </a> :
+                <Link to={linkTo}>
+                    {content}
+                </Link>
+            }
         </div>
     )
 }

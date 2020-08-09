@@ -112,17 +112,17 @@ const Header = ({
             
             <div className="header__social">
                 <div className="header__social__icon">
-                    <a target="_blank" href="https://www.instagram.com/labstruggles/">
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/labstruggles/">
                         <Img fixed={images.iconInstagram.childImageSharp.fixed}/>
                     </a>
                 </div>
                 <div className="header__social__icon">
-                    <a target="_blank" href="https://www.facebook.com/labstruggles/">
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/labstruggles/">
                         <Img fixed={images.iconFacebook.childImageSharp.fixed}/>
                     </a>
                 </div>
                 <div className="header__social__icon">
-                    <a target="_blank" href="https://twitter.com/LabStruggles">
+                    <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/LabStruggles">
                         <Img fixed={images.iconTwitter.childImageSharp.fixed}/>
                     </a>
                 </div>
@@ -149,13 +149,13 @@ const Header = ({
                             </div>
                         </Link>
                         <div className="header__menu__dropdown__body__social">
-                            <a target="_blank" href="https://www.instagram.com/labstruggles/">
+                            <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/labstruggles/">
                                 <Img fixed={images.iconInstagramLarge.childImageSharp.fixed}/>
                             </a>
-                            <a target="_blank" href="https://www.facebook.com/labstruggles/">
+                            <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/labstruggles/">
                                 <Img fixed={images.iconFacebookLarge.childImageSharp.fixed}/>
                             </a>
-                            <a target="_blank" href="https://twitter.com/LabStruggles">
+                            <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/LabStruggles">
                                 <Img fixed={images.iconTwitterLarge.childImageSharp.fixed}/>
                             </a>
                         </div>

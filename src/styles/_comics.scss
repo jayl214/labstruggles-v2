@@ -3,41 +3,129 @@
     justify-content: center;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
-    .comics__carousel{
+
+    .comics__list{
         width: 100%;
         max-width: 70rem;
-        margin-bottom: 1rem;
-        .comics__carousel__buttonGroup{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        .comics__list__column{
+            width: 100%;
             display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-            .comics__carousel__buttonGroup__button{
-                border: none;
-                outline: none;
-                background-color: transparent;
-                transform: scale(1);
-                transition: transform .15s ease-in-out;
-                -moz-transition: transform .15s ease-in-out;
-                -webkit-transition: transform .15s ease-in-out;
-                &.comics__carousel__buttonGroup__button--pulse{
-                    transform: scale(1.2);
+            flex-flow: column;
+            align-items: flex-start;
+            .comics__list__column__entry{
+                height: 33rem;
+                width: 33rem;
+                &:nth-child(even) {
+                    align-self: flex-end;
                 }
-                &:first-of-type{
-                    margin-right: 5rem;
-                    &.comics__carousel__buttonGroup__button--animate{
-                        transform: scale(1.2);
-                        animation: twitchLeft .2s ease-in-out;
+            }
+            .comics__list__column__button{
+                margin-top: 5rem;
+                align-self: center;
+                animation: float1 2s ease-in-out infinite;
+            }
+        }
+        .comics__background{
+            position: absolute;
+            display: flex;
+            width: 100%;
+
+            &:nth-child(1) {
+                height: 40%;
+                .comics__background__cloud{
+                    animation: float2 2s ease-in-out infinite;
+                    &:nth-child(1) {
+                        margin-right: 50rem;
+                    }
+                    &:nth-child(2) {
+                        margin-left: 15rem;
+                    }
+                    &:nth-child(3) {
+                        margin-right: 20rem;
+                    }
+                    &:nth-child(4) {
+                        margin-right: 45rem;
+                    }
+                    &:nth-child(5) {
+                        margin-right: 10rem;
                     }
                 }
-                &:last-of-type{
-                    &.comics__carousel__buttonGroup__button--animate{
-                        transform: scale(1.2);
-                        animation: twitchRight .2s ease-in-out;
+            }
+            &:nth-child(2) {
+                height: 60%;
+                .comics__background__cloud{
+                    animation: float2 3s ease-in-out infinite;
+                    &:nth-child(1) {
+                        margin-left: 15rem;
+                    }
+                    &:nth-child(2) {
+                        margin-left: 40rem;
+                    }
+                    &:nth-child(3) {
+                        margin-right: 60rem;
+                    }
+                    &:nth-child(4) {
+                        margin-right: 50rem;
                     }
                 }
-                .comics__carousel__buttonGroup__button__arrow{
-                    height: 3rem;
-                    width: 3rem;
+            }
+            &:nth-child(3) {
+                height: 50%;
+                animation: float2 4s ease-in-out infinite;
+                .comics__background__cloud{
+                    &:nth-child(1) {
+                        margin-left: 30rem;
+                    }
+                    &:nth-child(2) {
+                        margin-right: 40rem;
+                    }
+                    &:nth-child(3) {
+                        margin-left: 30rem;
+                    }
+                }
+            }
+
+            .parallax-inner{
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+            }
+
+        }
+    }
+
+}
+
+
+@media (max-width: 1024px) {
+    .comics{
+        .comics__list{
+            .comics__background{
+                display: none;
+            }
+            .comics__list__column{
+                .comics__list__column__entry{
+                    height: 80%;
+                    width: 80%;
+                    max-height: 33rem;
+                    max-width: 33rem;
+                    align-self: center;
+                    margin-bottom: 5rem;
+                    &:nth-child(even) {
+                        align-self: center;
+                    }
+                    &:nth-child(8) {
+                        margin-bottom: 0;
+                    }
+                }
+                .comics__list__column__button{
+                    margin-top: 0;
                 }
             }
         }
