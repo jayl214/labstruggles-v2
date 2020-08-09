@@ -1,7 +1,9 @@
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
+
+import AniLinkCover from "./aniLinkCover"
 
 const Header = ({
     currentPath= ''
@@ -90,24 +92,24 @@ const Header = ({
             id="header"
         >
             <div className="header__title">
-                <Link to="/">
+                <AniLinkCover to="/">
                     <Img className="header__title__logo" fixed={images.portrait.childImageSharp.fixed}/>
                     <div className="header__title__name">
                         LabStruggles
                     </div>
-                </Link>
+                </AniLinkCover>
             </div>
             <div className="header__nav">
-                <Link to="/comics/">
+                <AniLinkCover to="/comics/">
                     <div className={`header__nav__button ${currentPath.includes('comics') ? 'header__nav__button--active' : ''}`}>
                         Comics
                     </div>
-                </Link>
-                <Link to="/foster/">
+                </AniLinkCover>
+                <AniLinkCover to="/foster/">
                     <div className={`header__nav__button ${currentPath.includes('foster') ? 'header__nav__button--active' : ''}`}>
                         Foster
                     </div>
-                </Link>
+                </AniLinkCover>
             </div>
             
             <div className="header__social">
@@ -138,16 +140,16 @@ const Header = ({
                 </div>
                 <div className={`header__menu__dropdown ${isMenuActive ? 'header__menu__dropdown--active' : ''}`}>
                     <div className="header__menu__dropdown__body">
-                        <Link to="/comics/" className="header__menu__dropdown__body__link">
+                        <AniLinkCover to="/comics/" className="header__menu__dropdown__body__link">
                             <div className="header__menu__dropdown__body__link__content" style={{backgroundImage: `url(${images.blobPink.childImageSharp.fluid.src})`}}>
                                 Comics
                             </div>
-                        </Link>
-                        <Link to="/foster/" className="header__menu__dropdown__body__link"> 
+                        </AniLinkCover>
+                        <AniLinkCover to="/foster/" className="header__menu__dropdown__body__link"> 
                             <div className="header__menu__dropdown__body__link__content" style={{backgroundImage: `url(${images.blobCyan.childImageSharp.fluid.src})`}}>
                                 Foster
                             </div>
-                        </Link>
+                        </AniLinkCover>
                         <div className="header__menu__dropdown__body__social">
                             <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/labstruggles/">
                                 <Img fixed={images.iconInstagramLarge.childImageSharp.fixed}/>

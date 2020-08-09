@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import AniLinkCover from "./aniLinkCover"
+
 
 const ButtonCloud = ({
     defaultBackgroundImageUrl,
@@ -31,9 +32,9 @@ const ButtonCloud = ({
                 <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/labstruggles/">
                     {content}
                 </a> :
-                <Link to={linkTo}>
+                <AniLinkCover to={linkTo}>
                     {content}
-                </Link>
+                </AniLinkCover>
             }
         </div>
     )

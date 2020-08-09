@@ -28,6 +28,7 @@ module.exports = {
         icon: `src/images/portrait.png`,
       },
     },
+    `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
